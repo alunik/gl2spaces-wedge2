@@ -1,0 +1,4 @@
+.DS_Store
+build_audit/
+*.pyc
+__pycache__/

@@ -1,0 +1,257 @@
+\section{Descent to \texorpdfstring{$\GL_n(q)$}{GLn(q)}}
+\label{sec:lang-steinberg}
+
+Let \(F:G\to G\) be the standard Frobenius endomorphism, so that
+\(G^F=\GL_n(q)\). The chosen representatives are defined over \(\Fq\), hence
+their algebraic stabilizers are \(F\)-stable closed subgroups.
+
+\begin{proposition}[Fixed points of the algebraic stabilizer]
+\label{prop:fixed-point-stabilizer}
+Let \(L\) be an \(F\)-stable representative, and put
+\[
+  H_L=\Stab_{\GL_n(k)}(L).
+\]
+Then
+\[
+  \Stab_{\GL_n(q)}(L)=H_L^F.
+\]
+\end{proposition}
+
+\begin{proof}
+Since \(L\) is defined over \(\Fq\), it is fixed by \(F\). Therefore
+\[
+  \Stab_{\GL_n(q)}(L)=G^F\cap H_L.
+\]
+Because \(H_L\) is \(F\)-stable, the right-hand side is exactly \(H_L^F\).
+\end{proof}
+
+\begin{theorem}[Finite-field projective quotients]
+\label{thm:frobenius-projective-quotients}
+Let \(L\) be an \(F\)-stable representative through \(n\leq 7\). Then the
+projective quotient
+\[
+  \overline{Q}_L^F
+  =
+  \im\bigl(\Stab_{\GL_n(q)}(L)\to \PGL(L)\bigr)
+\]
+is determined by the Frobenius type of the support divisor \(D(L)\). More
+precisely:
+\begin{enumerate}[label=\arabic*.]
+\item \(D(L)=0\) gives \(\PGL_2(q)\);
+\item \(D(L)=m[a]\) with \(a\in \bbP^1(\Fq)\) gives a Borel subgroup;
+\item \(D(L)=2[a]+[b]\) with \(a,b\in \bbP^1(\Fq)\) gives a split torus;
+\item \(D(L)=[a]+[b]\) with \(a,b\in \bbP^1(\Fq)\) gives the normalizer of a
+  split torus;
+\item \(D(L)=[\alpha]+[\alpha^q]\) gives the normalizer of a nonsplit torus;
+\item \(D(L)=[a]+[b]+[c]\) with \(a,b,c\in \bbP^1(\Fq)\) gives \(S_3\);
+\item \(D(L)=[a]+[\alpha]+[\alpha^q]\) gives \(C_2\);
+\item \(D(L)=[\alpha]+[\alpha^q]+[\alpha^{q^2}]\) gives \(C_3\).
+\end{enumerate}
+Consequently the geometric orbit counts \(3,5,11,16\) refine to the finite
+field counts \(4,6,14,20\).
+\end{theorem}
+
+\begin{proof}
+By Theorem~\ref{thm:projective-image}, the algebraic quotient over \(k\) is the
+stabilizer of the support divisor \(D(L)\) in \(\PGL_2(k)\). For each divisor
+type appearing through \(n\le 7\), the lifting arguments in the proof of
+Theorem~\ref{thm:projective-image} are defined over \(\Fq\): diagonal
+rescalings, the substitutions \(t\mapsto t/(1+\beta t)\) for one-point support,
+transpositions of two simple support summands, and permutations of three
+simple support summands. Hence taking \(F\)-fixed points gives exactly the
+listed finite quotients.
+
+The only possible Frobenius orbit patterns on the support are split,
+quadratic, \(1+2\), and cubic, because the support has size at most \(3\).
+Applying these patterns to the geometric families yields the refinements
+\(3\mapsto 4\), \(5\mapsto 6\), \(11\mapsto 14\), and \(16\mapsto 20\).
+\end{proof}
+
+\begin{lemma}[Frobenius on product kernels]
+\label{lem:frobenius-product}
+Let \(H_0\) be a connected linear algebraic group over \(k\) with standard
+Frobenius \(F_0\). For \(d\geq 1\), let \(H=H_0^d\) and let \(F\) act by
+\[
+  F(h_1,\dots,h_d)=\bigl(F_0(h_d),F_0(h_1),\dots,F_0(h_{d-1})\bigr).
+\]
+Then projection onto the first factor induces an isomorphism
+\[
+  H^F\cong H_0^{F_0^d}.
+\]
+In particular,
+\[
+  (\SL_2(k)^d)^F\cong \SL_2(q^d).
+\]
+\end{lemma}
+
+\begin{proof}
+If \((h_1,\dots,h_d)\in H^F\), then
+\[
+  h_2=F_0(h_1),\quad h_3=F_0^2(h_1),\quad \dots,\quad h_d=F_0^{d-1}(h_1),
+\]
+and the final relation is \(h_1=F_0^d(h_1)\). So an \(F\)-fixed point is
+uniquely determined by its first component, and the displayed isomorphism
+follows.
+\end{proof}
+
+\begin{theorem}[Finite-field stabilizers from the geometric families]
+\label{thm:finite-field-stabilizers}
+Let \(L\) be an \(F\)-stable representative of a finite-field orbit through
+\(n\leq 7\). Write \(B(q)\), \(T_s(q)\), \(N_s(q)\), and \(N_{ns}(q)\) for a
+split Borel subgroup, a split maximal torus, the normalizer of a split maximal
+torus, and the normalizer of a nonsplit maximal torus in \(\GL_2(q)\), and let
+\(\widetilde{S}_3(q)\), \(\widetilde{C}_2(q)\), and \(\widetilde{C}_3(q)\)
+denote the full preimages in \(\GL_2(q)\) of \(S_3\), \(C_2\), and \(C_3\) in
+\(\PGL_2(q)\). Then:
+\begin{enumerate}[label=\arabic*.]
+\item if \(D(L)=0\), then
+  \[
+    \Stab_{\GL_n(q)}(S_d)
+    \cong
+    (\Fq^{\,2d-2}\rtimes \Fq^\times)\rtimes \GL_2(q),
+  \]
+  \[
+    \Stab_{\GL_n(q)}(S_2^2)
+    \cong
+    \bigl((\Sym_2(\Fq)\oplus \Sym_2(\Fq))\rtimes \GL_2(q)\bigr)\rtimes \GL_2(q),
+  \]
+  and radical extensions are obtained from
+  Proposition~\ref{prop:radical-extensions} by fixed points;
+\item if \(D(L)=m[a]\) with \(a\in \bbP^1(\Fq)\), then the quotient is
+  \(B(q)\), and
+  \[
+    \Stab_{\GL_n(q)}(J_{a,d})
+    \cong
+    \SL_2(\Fq[t]/(t^d))\rtimes B(q),
+  \]
+  \[
+    \Stab_{\GL_n(q)}(2J_{a,1})
+    \cong
+    \Sp_4(q)\rtimes B(q),
+  \]
+  \[
+    \Stab_{\GL_n(q)}(J_{a,2}\oplus J_{a,1})
+    \cong
+    \bigl(U_{2,1}(q)\rtimes (\SL_2(q)\times \SL_2(q))\bigr)\rtimes B(q),
+  \]
+  and the families containing an \(S_2\) block are the corresponding
+  fixed-point forms of Proposition~\ref{prop:s2-plus-core-kernel} and
+  Proposition~\ref{prop:s3-plus-j1};
+\item if \(D(L)=[a]+[b]\) with \(a,b\in \bbP^1(\Fq)\), then the quotient is
+  \(N_s(q)\), and
+  \[
+    \Stab_{\GL_n(q)}(J_{a,1}\oplus J_{b,1})
+    \cong
+    (\SL_2(q)\times \SL_2(q))\rtimes N_s(q);
+  \]
+\item if \(D(L)=2[a]+[b]\) with \(a,b\in \bbP^1(\Fq)\), then the quotient is
+  \(T_s(q)\), and
+  \[
+    \Stab_{\GL_n(q)}(J_{a,2}\oplus J_{b,1})
+    \cong
+    (\SL_2(\Fq[t]/(t^2))\times \SL_2(q))\rtimes T_s(q),
+  \]
+  \[
+    \Stab_{\GL_n(q)}(2J_{a,1}\oplus J_{b,1})
+    \cong
+    (\Sp_4(q)\times \SL_2(q))\rtimes T_s(q);
+  \]
+\item if \(D(L)=[\alpha]+[\alpha^q]\), then the quotient is \(N_{ns}(q)\), and
+  \[
+    \Stab_{\GL_n(q)}(Q)\cong \SL_2(q^2)\rtimes N_{ns}(q);
+  \]
+\item if \(D(L)=[a]+[b]+[c]\) with \(a,b,c\in \bbP^1(\Fq)\), then the quotient
+  is \(\widetilde{S}_3(q)\), and
+  \[
+    \Stab_{\GL_n(q)}(J_{a,1}\oplus J_{b,1}\oplus J_{c,1})
+    \cong
+    (\SL_2(q)^3)\rtimes \widetilde{S}_3(q);
+  \]
+\item if \(D(L)=[a]+[\alpha]+[\alpha^q]\), then the quotient is
+  \(\widetilde{C}_2(q)\), and
+  \[
+    \Stab_{\GL_n(q)}(J_{a,1}\oplus Q)
+    \cong
+    (\SL_2(q)\times \SL_2(q^2))\rtimes \widetilde{C}_2(q);
+  \]
+\item if \(D(L)=[\alpha]+[\alpha^q]+[\alpha^{q^2}]\), then the quotient is
+  \(\widetilde{C}_3(q)\), and
+  \[
+    \Stab_{\GL_n(q)}(C)\cong \SL_2(q^3)\rtimes \widetilde{C}_3(q).
+  \]
+\end{enumerate}
+In particular, every finite-field stabilizer through \(n\leq 7\) is explicit.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{prop:fixed-point-stabilizer}, each finite-field stabilizer
+is the fixed-point group of the corresponding algebraic stabilizer. The
+quotients are given by Theorem~\ref{thm:frobenius-projective-quotients}. For
+support defined over \(\Fq\), taking fixed points simply replaces \(k\) by
+\(\Fq\) in the formulas of Section~\ref{sec:first-stabilizers}. For quadratic,
+\(1+2\), and cubic support, Lemma~\ref{lem:frobenius-product} identifies the
+product kernels with \(\SL_2(q^2)\), \(\SL_2(q)\times \SL_2(q^2)\), and
+\(\SL_2(q^3)\), respectively. The radical and \(S_2\)-extension families are
+again obtained by fixed points, because their defining maps are polynomial in
+the matrix entries.
+\end{proof}
+
+\begin{center}
+\small
+\begin{tabular}{L{0.22\textwidth} L{0.22\textwidth} L{0.36\textwidth}}
+\toprule
+Support pattern over \(\Fq\) & Quotient in \(\GL_2(q)\) & Core kernel over \(\Fq\) \\
+\midrule
+pure singular &
+\(\GL_2(q)\) &
+\(\Fq^{\,2d-2}\rtimes \Fq^\times\), or
+\((\Sym_2(\Fq)\oplus \Sym_2(\Fq))\rtimes \GL_2(q)\) for \(S_2^2\) \\
+one rational support point &
+\(B(q)\) &
+\(\SL_2(\Fq[t]/(t^d))\), \(\Sp_4(q)\), or
+\(U_{2,1}(q)\rtimes (\SL_2(q)\times \SL_2(q))\) \\
+two rational points &
+\(N_s(q)\) &
+\(\SL_2(q)\times \SL_2(q)\) \\
+weighted rational pair &
+\(T_s(q)\) &
+\(\SL_2(\Fq[t]/(t^2))\times \SL_2(q)\), or
+\(\Sp_4(q)\times \SL_2(q)\) \\
+quadratic pair &
+\(N_{ns}(q)\) &
+\(\SL_2(q^2)\) \\
+three rational points &
+\(\widetilde{S}_3(q)\) &
+\(\SL_2(q)^3\) \\
+one rational point plus one quadratic pair &
+\(\widetilde{C}_2(q)\) &
+\(\SL_2(q)\times \SL_2(q^2)\) \\
+one cubic orbit &
+\(\widetilde{C}_3(q)\) &
+\(\SL_2(q^3)\) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{corollary}[Reconstruction]
+\label{cor:finite-field-reconstruction}
+Through \(n\leq 7\), every finite-field stabilizer \(\Stab_{\GL_n(q)}(L)\) is
+reconstructed from three inputs:
+\begin{enumerate}[label=\arabic*.]
+\item the geometric support-divisor type \(D(L)\), which determines the
+  quotient \(Q_L\);
+\item the Frobenius orbit pattern on \(\operatorname{Supp} D(L)\), which
+  decides whether the support is split, quadratic, \(1+2\), or cubic;
+\item the local repeated-support kernel, together with the radical and
+  \(S_2\)-extension mechanisms of Proposition~\ref{prop:radical-extensions},
+  Proposition~\ref{prop:s2-plus-core-kernel}, and
+  Proposition~\ref{prop:s3-plus-j1}.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+The quotient is determined by
+Theorem~\ref{thm:frobenius-projective-quotients}, and the kernel by
+Theorem~\ref{thm:finite-field-stabilizers}. This is exactly the reconstruction
+procedure.
+\end{proof}

@@ -85,7 +85,7 @@ def main() -> None:
         assert_equal(target, tmp, label)
 
     assert_contains_lines(
-        PAPER / "local_models_appendix.tex",
+        PAPER / "local_model_table_algebraic.tex",
         [
             r"\(S_d\) &",
             r"\(\mathbf G_a^{2d-2}\rtimes \mathbf G_m\) &",
@@ -100,7 +100,7 @@ def main() -> None:
     )
 
     assert_contains_lines(
-        PAPER / "local_models_appendix.tex",
+        PAPER / "local_model_table_finite.tex",
         [
             r"pure singular &",
             r"\(\GL_2(q)\) &",
@@ -115,7 +115,7 @@ def main() -> None:
     )
 
     assert_contains_lines(
-        PAPER / "lang_steinberg.tex",
+        PAPER / "finite_field_family_summary_table.tex",
         [
             r"pure singular &",
             r"\(\GL_2(q)\) &",

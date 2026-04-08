@@ -4,14 +4,3 @@ build_audit/
 __pycache__/
 lean_wedge2_formalization/.lake/
 lean_wedge2_formalization/build/
-paper_wedge2_rewrite/build/
-paper_wedge2_rewrite/*.aux
-paper_wedge2_rewrite/*.bbl
-paper_wedge2_rewrite/*.bcf
-paper_wedge2_rewrite/*.blg
-paper_wedge2_rewrite/*.fdb_latexmk
-paper_wedge2_rewrite/*.fls
-paper_wedge2_rewrite/*.log
-paper_wedge2_rewrite/*.out
-paper_wedge2_rewrite/*.run.xml
-paper_wedge2_rewrite/*.synctex.gz

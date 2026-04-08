@@ -1,0 +1,52 @@
+\section{Preliminaries}
+\label{sec:preliminaries}
+
+Let \(k\) be a field and let \(V\) be an \(n\)-dimensional \(k\)-vector space.
+A point of
+\[
+  \Gr(2,\wedgepow{2}{V})
+\]
+is a \(2\)-dimensional subspace \(L=\langle \omega_1,\omega_2\rangle\) of
+\(\wedge^2 V\), equivalently a pencil of alternating forms
+\(\lambda\omega_1+\mu\omega_2\) on \(V\).
+
+The action of \(G=\GL(V)\) on \(\wedge^2 V\) induces an action on
+\(\Gr(2,\wedge^2 V)\). For a representative \(L\le \wedge^2 V\), define
+\[
+  \rho_L:\Stab_{\GL(V)}(L)\to \GL(L)\cong \GL_2
+\]
+to be the induced action on the coefficient space \(L\). We write
+\[
+  K_L=\ker(\rho_L),
+  \qquad
+  Q_L=\im(\rho_L).
+\]
+Thus \(K_L\) is the pointwise stabilizer of \(L\), \(Q_L\) is the image of the
+setwise stabilizer on \(L\), and the stabilizer is organized by the exact
+sequence
+\[
+  1\to K_L\to \Stab_{\GL(V)}(L)\xrightarrow{\rho_L} Q_L\to 1.
+\]
+The geometric tables record the chosen representative together with the
+corresponding pair \((K_L,Q_L)\).
+
+When \(k\) is algebraically closed, we index the rows by their weak-congruence
+type. These labels are used only as names for the representatives. The quotient
+\(Q_L\) is computed separately as the image of \(\rho_L\); it is not determined
+from the weak-congruence label alone.
+
+For \(0\le r\le \lfloor n/2\rfloor\), set
+\[
+  \omega_r=e_1\wedge e_2+\cdots+e_{2r-1}\wedge e_{2r}.
+\]
+We use without further comment the standard classification of lines in
+\(\bbP(\wedge^2 V)\) by even rank and the corresponding stabilizer
+descriptions for the model tensors \(\omega_r\). These background facts serve
+only to fix notation and to connect the chosen row labels with the existing
+weak-congruence literature.
+
+The finiteness theorem of Guralnick--Liebeck--Macpherson--Seitz
+\cite{GLMS1997} shows that \(\GL(V)\) has only finitely many orbits on
+\(\Gr(2,\wedge^2 V)\) for \(n\le 7\). Those are precisely the dimensions
+tabulated in Sections~\ref{sec:geometric-stabilizers} and
+\ref{sec:finite-fields}.

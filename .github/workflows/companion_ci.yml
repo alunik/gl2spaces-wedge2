@@ -1,0 +1,32 @@
+name: Companion CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lean_wedge2_formalization
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install elan
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch Lean cache
+        run: lake exe cache get || true
+      - name: Build Lean formalization
+        run: lake build Wedge2Formalization
+
+  paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          working_directory: paper_wedge2_rewrite

@@ -1,0 +1,67 @@
+\section{Geometric Orbit and Stabilizer Tables}
+\label{sec:geometric-stabilizers}
+
+For this section let \(k=\overline{\mathbf F}_q\) and \(V=k^n\) with
+\(n=4,5,6,7\). The following theorem records the geometric orbit
+representatives together with the exact kernel and quotient data attached to
+their stabilizers.
+
+\begin{theorem}
+\label{thm:geometric-tables}
+For \(n=4,5,6,7\), the \(\GL(V)\)-orbits on \(\Gr(2,\wedge^2 V)\) are exactly
+the rows listed in the geometric orbit tables below. For each representative
+\(L\), the stabilizer is determined by the exact sequence
+\[
+  1\to K_L\to \Stab_{\GL(V)}(L)\xrightarrow{\rho_L} Q_L\to 1,
+\]
+with \(K_L\) and \(Q_L\) given by the corresponding row of the geometric
+stabilizer tables.
+\end{theorem}
+
+\begin{proof}
+The kernel and quotient statements are verified row by row in the companion
+Lean~4 formalization; see Subsection~\ref{subsec:formalization-protocol} and
+Appendix~\ref{app:lean-crosswalk}. The completeness of the geometric list is
+deduced later in Corollary~\ref{cor:geometric-list-complete-rewrite} from the
+finite-field orbit-count identity.
+\end{proof}
+
+In the quotient column, \(B\), \(T\), and \(N_T\) denote the full preimages in
+\(\GL(L)\cong \GL_2(k)\) of a Borel subgroup, a maximal torus, and the
+normalizer of a maximal torus in \(\PGL(L)\). The entry ``\(S_3\) preimage''
+denotes the full preimage of \(S_3\le \PGL(L)\).
+
+\subsection{Geometric orbit representatives}
+
+\begingroup
+\small
+\input{sections/geometric_orbit_tables_generated.tex}
+\endgroup
+
+\subsection{Geometric stabilizers}
+
+\begingroup
+\small
+\input{sections/geometric_stabilizer_tables_generated.tex}
+\endgroup
+
+\subsection{How the formalization is used}
+\label{subsec:formalization-protocol}
+
+For each table row there is a public Lean namespace
+\path|Wedge2Formalization.Paper.Nn.Rowm| and a matching source file
+\path|Wedge2Formalization/Paper/Nn/Rowm.lean| in the companion repository.
+This is the referee-facing layer of the formalization; the lower-level
+coordinate files are not needed for a row-by-row check.
+
+Inside that namespace, the declarations \path|paperRep1| and
+\path|paperRep2| are the literal basis vectors printed in the geometric orbit
+table. When the proof uses a more convenient internal working model, the
+lemmas \path|paperRep1_transport| and \path|paperRep2_transport| identify the
+displayed representative with that internal model.
+
+The theorem \path|mem_K_table_iff| is the public kernel statement for the row,
+and the theorem \path|quotient_image| identifies the image \(Q_L\) of the
+coefficient-side action. Together with the representative transport lemmas,
+these declarations recover the stabilizer line printed in the tables. Appendix
+~\ref{app:lean-crosswalk} records the row-to-namespace correspondence.

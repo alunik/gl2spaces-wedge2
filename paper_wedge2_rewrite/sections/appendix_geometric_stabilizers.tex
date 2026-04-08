@@ -1,0 +1,121 @@
+\section{Weak-congruence labels and Lean crosswalk}
+\label{app:lean-crosswalk}
+
+The public Lean entry point is \path|Wedge2Formalization.Paper|. For each row
+of the geometric tables there is a corresponding namespace
+\path|Wedge2Formalization.Paper.Nn.Rowm| and a dedicated file
+\path|Wedge2Formalization/Paper/Nn/Rowm.lean|. In every public row namespace,
+the representative transport is given by \path|paperRep1_transport| and
+\path|paperRep2_transport|, the table-facing kernel theorem is
+\path|mem_K_table_iff|, and the quotient theorem is \path|quotient_image|.
+
+The following tables record the row numbering used in the paper, the
+weak-congruence label used to name the representative, and the corresponding
+public Lean namespace.
+
+\paragraph{$n=4$.}
+\begin{longtable}{@{}c p{0.27\textwidth} p{0.55\textwidth}@{}}
+\toprule
+Row & Type & Lean namespace \\
+\midrule
+\endfirsthead
+\toprule
+Row & Type & Lean namespace \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{Continued on next page}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+1 & \(J_{a,2}\) & \path|Wedge2Formalization.Paper.N4.Row1| \\
+2 & \(J_{a,1} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N4.Row2| \\
+3 & \(S_1 + S_2\) & \path|Wedge2Formalization.Paper.N4.Row3| \\
+\end{longtable}
+
+\paragraph{$n=5$.}
+\begin{longtable}{@{}c p{0.27\textwidth} p{0.55\textwidth}@{}}
+\toprule
+Row & Type & Lean namespace \\
+\midrule
+\endfirsthead
+\toprule
+Row & Type & Lean namespace \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{Continued on next page}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+1 & \(S_3\) & \path|Wedge2Formalization.Paper.N5.Row1| \\
+2 & \(S_2 + S_1^2\) & \path|Wedge2Formalization.Paper.N5.Row2| \\
+3 & \(S_2 + J_{a,1}\) & \path|Wedge2Formalization.Paper.N5.Row3| \\
+4 & \(S_1 + J_{a,2}\) & \path|Wedge2Formalization.Paper.N5.Row4| \\
+5 & \(S_1 + J_{a,1} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N5.Row5| \\
+\end{longtable}
+
+\paragraph{$n=6$.}
+\begin{longtable}{@{}c p{0.27\textwidth} p{0.55\textwidth}@{}}
+\toprule
+Row & Type & Lean namespace \\
+\midrule
+\endfirsthead
+\toprule
+Row & Type & Lean namespace \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{Continued on next page}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+1 & \(J_{a,3}\) & \path|Wedge2Formalization.Paper.N6.Row1| \\
+2 & \(J_{a,2} + J_{a,1}\) & \path|Wedge2Formalization.Paper.N6.Row2| \\
+3 & \(J_{a,2} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N6.Row3| \\
+4 & \(2J_{a,1} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N6.Row4| \\
+5 & \(J_{a,1} + J_{b,1} + J_{c,1}\) & \path|Wedge2Formalization.Paper.N6.Row5| \\
+6 & \(S_1^2 + J_{a,2}\) & \path|Wedge2Formalization.Paper.N6.Row6| \\
+7 & \(S_1^2 + J_{a,1} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N6.Row7| \\
+8 & \(S_1 + S_2 + J_{a,1}\) & \path|Wedge2Formalization.Paper.N6.Row8| \\
+9 & \(S_1^3 + S_2\) & \path|Wedge2Formalization.Paper.N6.Row9| \\
+10 & \(S_1 + S_3\) & \path|Wedge2Formalization.Paper.N6.Row10| \\
+11 & \(S_2^2\) & \path|Wedge2Formalization.Paper.N6.Row11| \\
+\end{longtable}
+
+\paragraph{$n=7$.}
+\begin{longtable}{@{}c p{0.27\textwidth} p{0.55\textwidth}@{}}
+\toprule
+Row & Type & Lean namespace \\
+\midrule
+\endfirsthead
+\toprule
+Row & Type & Lean namespace \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{Continued on next page}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+1 & \(S_4\) & \path|Wedge2Formalization.Paper.N7.Row1| \\
+2 & \(S_3 + S_1^2\) & \path|Wedge2Formalization.Paper.N7.Row2| \\
+3 & \(S_2^2 + S_1\) & \path|Wedge2Formalization.Paper.N7.Row3| \\
+4 & \(S_2 + S_1^4\) & \path|Wedge2Formalization.Paper.N7.Row4| \\
+5 & \(S_3 + J_{a,1}\) & \path|Wedge2Formalization.Paper.N7.Row5| \\
+6 & \(S_2 + S_1^2 + J_{a,1}\) & \path|Wedge2Formalization.Paper.N7.Row6| \\
+7 & \(S_2 + J_{a,2}\) & \path|Wedge2Formalization.Paper.N7.Row7| \\
+8 & \(S_2 + 2J_{a,1}\) & \path|Wedge2Formalization.Paper.N7.Row8| \\
+9 & \(S_2 + J_{a,1} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N7.Row9| \\
+10 & \(S_1^3 + J_{a,2}\) & \path|Wedge2Formalization.Paper.N7.Row10| \\
+11 & \(S_1^3 + J_{a,1} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N7.Row11| \\
+12 & \(S_1 + J_{a,3}\) & \path|Wedge2Formalization.Paper.N7.Row12| \\
+13 & \(S_1 + J_{a,2} + J_{a,1}\) & \path|Wedge2Formalization.Paper.N7.Row13| \\
+14 & \(S_1 + J_{a,2} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N7.Row14| \\
+15 & \(S_1 + 2J_{a,1} + J_{b,1}\) & \path|Wedge2Formalization.Paper.N7.Row15| \\
+16 & \(S_1 + J_{a,1} + J_{b,1} + J_{c,1}\) & \path|Wedge2Formalization.Paper.N7.Row16| \\
+\end{longtable}

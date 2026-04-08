@@ -1,12 +1,14 @@
 # `gl2spaces-wedge2`
 
-This repository is the Magma companion package for the geometry-first paper on
-the action of `GL(V)` on `Gr(2, \wedge^2 V)`.
+This repository is the companion repository for the paper on the action of
+`GL(V)` on `Gr(2, \wedge^2 V)`.
 
 Through `n <= 7`, it provides:
 - hard-coded geometric and finite-field orbit representatives;
 - hard-coded stabilizer descriptions matching the paper;
 - full hard-coded stabilizer generators in `GL(V)`.
+- the Lean formalization of the geometric stabilizer tables;
+- the current LaTeX source of the paper.
 
 Nothing here computes stabilizers by transporter search at runtime.
 
@@ -21,6 +23,12 @@ Nothing here computes stabilizers by transporter search at runtime.
   package.
 - `paper_tables/`
   Bundled TeX tables from the paper, used only by the maintenance audit.
+- `lean_wedge2_formalization/`
+  The Lean companion formalization. The public paper-facing layer lives in
+  `lean_wedge2_formalization/Wedge2Formalization/Paper/`.
+- `paper_wedge2_rewrite/`
+  The current LaTeX source of the paper, together with a checked-in `main.pdf`
+  for audit convenience.
 
 ## If You Just Want To Use It
 
@@ -83,8 +91,45 @@ meant to match:
 - `paper_tables/geometric_stabilizer_tables_generated.tex`
 - `paper_tables/finite_field_stabilizer_tables_generated.tex`
 
-So the repository can be used both as a companion for the paper and as a
-standalone finite-range data package.
+The paper source itself lives in `paper_wedge2_rewrite/`, and the formally
+verified geometric stabilizer layer lives in
+`lean_wedge2_formalization/Wedge2Formalization/Paper/`.
+
+For a representative `L`, the paper and Lean companion use the induced action
+
+```text
+ρ_L : Stab_GL(V)(L) → GL(L)
+```
+
+and record
+
+```text
+K_L = ker(ρ_L),   Q_L = im(ρ_L).
+```
+
+In the Lean public API, a referee can check a row by opening the corresponding
+file `lean_wedge2_formalization/Wedge2Formalization/Paper/Nn/Rowm.lean` and
+looking for:
+
+- `paperRep₁`, `paperRep₂`
+- `paperRep₁_transport`, `paperRep₂_transport`
+- `mem_K_table_iff`
+- `quotient_image`
+
+So the repository can be used both as a standalone finite-range data package
+and as the single public home for the Magma code, the paper source, and the
+Lean companion formalization.
+
+## Continuous verification
+
+The GitHub Actions workflow `.github/workflows/companion_ci.yml` checks the two
+maintained proof-producing layers in this repository:
+
+- `lean_wedge2_formalization/` is built with `lake build Wedge2Formalization`
+- `paper_wedge2_rewrite/` is built with LaTeX
+
+This keeps the public paper source and the Lean companion synchronized inside
+the same repository.
 
 ## For Maintainers
 
